@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'services';
+  todos : any = []
+
+  saveValue(e : any){
+    this.todos.push(e)
+    console.log(e);
+    
+  }
 }
