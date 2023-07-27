@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { InputComponent } from './components/input/input.component';
 import { DisplayComponent } from './components/display/display.component';
+import { TodoDataService } from './services/todo-data.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { DisplayComponent } from './components/display/display.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TodoDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

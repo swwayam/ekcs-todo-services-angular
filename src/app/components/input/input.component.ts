@@ -1,4 +1,5 @@
-import { Component , Output, EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
+import { TodoDataService } from 'src/app/services/todo-data.service';
 
 @Component({
   selector: 'app-input',
@@ -6,11 +7,16 @@ import { Component , Output, EventEmitter} from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Output() outputValue : any = new EventEmitter()
-
-  log(todo: any){
-    this.outputValue.emit(todo)
+ 
+  constructor(public todoService: TodoDataService){
   }
 
+  log(value: any){
+    this.todoService.saveValue(value)
+  }
+
+  clear(){
+    this.todoService.clearAll()
+  }
 
 }
